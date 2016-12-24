@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/phoenix-api/!svn/ver/16/trunk/phoenix-api/sql
+END
+0.run.sql
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/phoenix-api/!svn/ver/6/trunk/phoenix-api/sql/0.run.sql
+END
+rolling-restart-rs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/phoenix-api/!svn/ver/16/trunk/phoenix-api/sql/rolling-restart-rs.sh
+END
+1.table.ddl.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/phoenix-api/!svn/ver/14/trunk/phoenix-api/sql/1.table.ddl.sql
+END
+2.alter_table.ddl.sql
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/phoenix-api/!svn/ver/6/trunk/phoenix-api/sql/2.alter_table.ddl.sql
+END
+9.rollback.sql
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/phoenix-api/!svn/ver/6/trunk/phoenix-api/sql/9.rollback.sql
+END

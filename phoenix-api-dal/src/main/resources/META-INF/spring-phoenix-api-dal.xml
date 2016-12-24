@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xmlns:jee="http://www.springframework.org/schema/jee" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd  
+	                      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	                      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd         
+	                      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd         
+	                      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	<!-- 加载本工程配置 -->
+	<import resource="classpath:META-INF/spring-phoenix-api-conf.xml" />
+	             
+	<!-- 加载注解功能 -->
+	<context:spring-configured />
+	<context:annotation-config />
+	<tx:annotation-driven />
+
+	<!-- 扫描本工程bean -->
+	<context:component-scan base-package="cn.phoenix.api.dal.mapper">
+	</context:component-scan>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.phoenix.api.dal.mapper" />
+		<property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
+	</bean>
+	<!--
+				|| Spring phoenix jdbc
+	-->
+	<!--
+	<bean id="phoenixJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSource" />
+		<qualifier value="phoenixJdbcTemplate"></qualifier>
+	</bean>
+	<bean id="hBaseDao" class="com.coreware.dao.impl.HBaseBaseDAOImpl">
+		<property name="jdbcTemplate" ref="phoenixJdbcTemplate" />
+	</bean>
+	 -->
+
+
+	<!--
+                    || phoenix jdbc
+	-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${phoenix.driverClassName}" />
+		<property name="url" value="${phoenix.url}" />
+		<property name="username" value="${phoenix.username}" />
+		<property name="password" value="${phoenix.password}" />
+		<property name="initialSize" value="${phoenix.initialSize}" />
+		<property name="maxActive" value="${phoenix.maxActive}" />
+		<!-- Phoenix进行数据更改时不会自动的commit,必须要添加defaultAutoCommit属性,否则会导致数据无法提交的情况 -->
+		<property name="defaultAutoCommit" value="${phoenix.defaultAutoCommit}" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="${mybatis.mappers}"/>
+		<property name="typeHandlersPackage" value="${mybatis.typeHandler.package}" />
+	</bean>
+
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<!-- 声明使用注解式事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" order="2" />
+</beans>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/phoenix-api/!svn/ver/11/trunk/phoenix-api/phoenix-api-conf/etc/phoenix-api/conf
+END
+phoenix-api-db.properties
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/phoenix-api/!svn/ver/11/trunk/phoenix-api/phoenix-api-conf/etc/phoenix-api/conf/phoenix-api-db.properties
+END
+settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/phoenix-api/!svn/ver/9/trunk/phoenix-api/phoenix-api-conf/etc/phoenix-api/conf/settings.xml
+END
+phoenix-api-settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/phoenix-api/!svn/ver/11/trunk/phoenix-api/phoenix-api-conf/etc/phoenix-api/conf/phoenix-api-settings.xml
+END

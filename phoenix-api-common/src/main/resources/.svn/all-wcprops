@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/phoenix-api/!svn/ver/2/trunk/phoenix-api/phoenix-api-common/src/main/resources
+END
+user.xls
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/phoenix-api/!svn/ver/2/trunk/phoenix-api/phoenix-api-common/src/main/resources/user.xls
+END
+monJobTemplate.xls
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/phoenix-api/!svn/ver/2/trunk/phoenix-api/phoenix-api-common/src/main/resources/monJobTemplate.xls
+END
+jobReportTemplate.xls
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/phoenix-api/!svn/ver/2/trunk/phoenix-api/phoenix-api-common/src/main/resources/jobReportTemplate.xls
+END

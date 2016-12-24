@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.phoenix.api.dal.mapper.MiuSalesDetailMapper">
+    <resultMap id="MiuSalesDetailMap" type="cn.phoenix.api.model.MiuSalesDetail">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="brand" property="brand" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="INTEGER"/>
+        <result column="sales_total" property="salesTotal" jdbcType="INTEGER"/>
+
+    </resultMap>
+    <sql id="Base_Column_List">
+        BRAND, PRICE, SALES_TOTAL
+    </sql>
+    <select id="selectByParams" resultMap="MiuSalesDetailMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/> FROM miu_sales_detail
+        WHERE 1 = 1
+        <if test="null!=params.id and ''!=params.id">
+            AND id = #{params.id}
+        </if>
+        <if test="null!=params.brand and ''!=params.brand">
+            AND brand = #{params.brand}
+        </if>
+        <if test="null!=params.searchBrand and ''!=params.searchBrand">
+            AND brand like CONCAT(CONCAT('%',#{params.searchBrand}), '%')
+        </if>
+        <if test="null!=params.price and ''!=params.price">
+            AND price = #{params.price}
+        </if>
+        <if test="null!=params.searchPrice and ''!=params.searchPrice">
+            AND price like CONCAT(CONCAT('%',#{params.searchPrice}), '%')
+        </if>
+    </select>
+    <insert id="insert" parameterType="cn.phoenix.api.model.MiuSalesDetail">
+        UPSERT INTO miu_sales_detail(id, brand, price, sales_total)
+        VALUES (#{id}, #{brand}, #{price}, #{salesTotal})
+    </insert>
+</mapper>

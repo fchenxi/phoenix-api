@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/phoenix-api/!svn/ver/19/trunk/phoenix-api
+END
+READE.md
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/phoenix-api/!svn/ver/18/trunk/phoenix-api/READE.md
+END
+deploy.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/phoenix-api/!svn/ver/12/trunk/phoenix-api/deploy.sh
+END
+tools.bat
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/phoenix-api/!svn/ver/12/trunk/phoenix-api/tools.bat
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/phoenix-api/!svn/ver/17/trunk/phoenix-api/pom.xml
+END
