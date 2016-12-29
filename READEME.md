@@ -56,3 +56,10 @@ http://www.mamicode.com/info-detail-1106773.html
 
 kadmin.local: modprinc -maxrenewlife 7days krbtgt/ganglia.localdoamin/LOCALDOMAIN	
 kadmin.local: modprinc -maxrenewlife 1week krbtgt/HADOOP.COM@HADOOP.COM
+
+7.kerberos for hbase
+http://blog.csdn.net/wk022/article/details/50948523
+
+
+
+
